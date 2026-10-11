@@ -1,10 +1,10 @@
 /**
  * Central WhatsApp Configuration
  * Update the phone number here to update all WhatsApp CTAs across the entire website.
- * Format: Country code followed by phone number with no '+' or dashes, e.g. "916299728634"
+ * Format: Country code followed by phone number with no '+' or dashes, e.g. "919876543210"
  */
-export const WHATSAPP_NUMBER = "916299728634";
-export const FORMATTED_PHONE = "+91 62997 28634";
+export const WHATSAPP_NUMBER = "919876543210";
+export const FORMATTED_PHONE = "+91 98765 43210";
 
 export const DEFAULT_MESSAGES = {
   quote: "Hi, I have a typewriting / data entry project and would like to get a quote. Please share your rates and turnaround time.",

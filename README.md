@@ -20,7 +20,7 @@ Built with **React**, **Vite**, and **Vanilla CSS** with a sleek dark cyber-neon
   - PDF to Word / Excel Conversion (Pixel-Perfect Layout)
   - Web Research & Data Mining (Verified Sources)
 - **Central WhatsApp Integration**:
-  - Direct WhatsApp click-to-chat API (`+91 62997 28634`).
+  - Direct WhatsApp click-to-chat API (`+91 98765 43210`).
   - Pre-filled custom messages for every CTA and calculator breakdown.
   - Fixed floating WhatsApp action button with animated pulse ring.
 - **Client Testimonials & Social Proof**: Realistic customer reviews with 5-star ratings and verified client badges.
@@ -71,8 +71,8 @@ npm run build
 To change the contact WhatsApp number across the entire site, simply update `WHATSAPP_NUMBER` in `src/config/whatsapp.js`:
 
 ```javascript
-export const WHATSAPP_NUMBER = "916299728634";
-export const FORMATTED_PHONE = "+91 62997 28634";
+export const WHATSAPP_NUMBER = "919876543210";
+export const FORMATTED_PHONE = "+91 98765 43210";
 ```
 
 ---

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import TrustLogos from './components/TrustLogos';
 import Services from './components/Services';
 import EarningsCalculator from './components/EarningsCalculator';
 import WhyChooseUs from './components/WhyChooseUs';
@@ -20,6 +21,9 @@ export default function App() {
       <main>
         {/* Hero Section with Dual Device Presentation & Feature Cards */}
         <Hero />
+
+        {/* National Initiatives & Trust Logos */}
+        <TrustLogos />
 
         {/* 4 Professional Services */}
         <Services />

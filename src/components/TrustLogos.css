@@ -1,0 +1,134 @@
+/* Trust Logos Section Styles */
+.trust-logos-section {
+  padding: 4.5rem 0 5rem;
+  background: #080D12;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}
+
+.trust-logos-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+
+.trust-logos-subtitle {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-neon-green);
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 12px rgba(0, 230, 118, 0.4);
+}
+
+.trust-logos-title {
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 800;
+  color: var(--color-text-white);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+/* Logos Grid */
+.trust-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+.trust-logo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(14, 21, 29, 0.75);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem 1.25rem 1.5rem;
+  transition: all var(--transition-normal);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.trust-logo-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 230, 118, 0.45);
+  background: rgba(18, 28, 38, 0.85);
+  box-shadow: 
+    0 18px 35px rgba(0, 0, 0, 0.8),
+    0 0 25px rgba(0, 230, 118, 0.2);
+}
+
+/* Logo Image Container with clean white background so official colors pop */
+.logo-img-wrapper {
+  width: 100%;
+  height: 90px;
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.15rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  transition: transform var(--transition-fast);
+}
+
+.trust-logo-card:hover .logo-img-wrapper {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 230, 118, 0.25);
+}
+
+.trust-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
+}
+
+.logo-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.logo-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+  line-height: 1.25;
+}
+
+.logo-tagline {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--color-neon-green);
+  letter-spacing: 0.02em;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .trust-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .trust-logos-section {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .trust-logos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .logo-img-wrapper {
+    height: 80px;
+  }
+}

@@ -1,0 +1,117 @@
+/* Floating WhatsApp Button Styles - Dark Neon Theme */
+.whatsapp-floating-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Tooltip Badge */
+.whatsapp-tooltip {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: all var(--transition-fast);
+  background-color: rgba(11, 16, 23, 0.95);
+  backdrop-filter: blur(12px);
+  color: var(--color-text-white);
+  border: 1px solid var(--color-neon-border);
+  font-size: 0.825rem;
+  font-weight: 600;
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 230, 118, 0.2);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.whatsapp-tooltip.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* Circular Button */
+.whatsapp-floating-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-neon-green);
+  color: var(--color-text-dark);
+  box-shadow: var(--shadow-neon-lg);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: pointer;
+  border: none;
+}
+
+.whatsapp-floating-btn:hover {
+  transform: scale(1.1);
+  background-color: #1aff86;
+  box-shadow: 0 0 45px rgba(0, 230, 118, 0.8);
+}
+
+.whatsapp-floating-btn:active {
+  transform: scale(0.95);
+}
+
+.whatsapp-floating-icon {
+  color: var(--color-text-dark);
+  transition: transform var(--transition-fast);
+}
+
+.whatsapp-floating-btn:hover .whatsapp-floating-icon {
+  transform: rotate(5deg) scale(1.08);
+}
+
+/* Pulsing effect ring */
+.whatsapp-pulse-ring {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-neon-green);
+  opacity: 0;
+  animation: pulseRing 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .whatsapp-floating-container {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .whatsapp-floating-btn {
+    width: 56px;
+    height: 56px;
+  }
+
+  .whatsapp-tooltip {
+    display: none;
+  }
+}

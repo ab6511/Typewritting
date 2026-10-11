@@ -1,17 +1,81 @@
-# React + Vite
+# Service Biz — Typewriting & Data Entry Freelancer Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, responsive, high-converting static business landing page for a professional **Typewriting, Copy Typing, and Data Entry Freelancer**.
 
-Currently, two official plugins are available:
+Built with **React**, **Vite**, and **Vanilla CSS** with a sleek dark cyber-neon aesthetic inspired by modern Behance & WhatsApp Web landing page designs.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Cyber-Neon Dark Aesthetic**: Deep obsidian theme with ambient neon emerald green radial lighting, glassmorphism, and subtle glow effects.
+- **Dual Device Hero Showcase**: Desktop application window mockup alongside an angled 3D floating smartphone frame and an animated circular rotating badge.
+- **Interactive Earnings Calculator**:
+  - Live estimation for typing volume, daily hours, and weekly days.
+  - Linked range sliders and number input boxes.
+  - 2×2 **"Your Income"** breakdown table calculating Daily, Weekly, Monthly, and Yearly earnings.
+- **Freelance Services Section**:
+  - Professional Typewriting (80+ WPM)
+  - Excel & Data Entry (Spreadsheet Pro)
+  - PDF to Word / Excel Conversion (Pixel-Perfect Layout)
+  - Web Research & Data Mining (Verified Sources)
+- **Central WhatsApp Integration**:
+  - Direct WhatsApp click-to-chat API (`+91 62997 28634`).
+  - Pre-filled custom messages for every CTA and calculator breakdown.
+  - Fixed floating WhatsApp action button with animated pulse ring.
+- **Client Testimonials & Social Proof**: Realistic customer reviews with 5-star ratings and verified client badges.
+- **Why Hire Me & How It Works**: Transparent 3-step workflow and trust metrics (80+ WPM, 99.9% accuracy, 500+ projects).
+- **Fully Responsive**: Optimized for desktop, tablet, and mobile with a custom navigation drawer.
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
-# Typewritting
+## 🛠️ Tech Stack
+
+- **Frontend**: React 18 / 19
+- **Bundler & Dev Server**: Vite
+- **Styling**: Vanilla CSS (Custom Design System with CSS Variables)
+- **Icons**: Lucide React
+- **Typography**: Inter (Google Fonts)
+
+---
+
+## 💻 Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/ab6511/Typewritting.git
+cd Typewritting
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Run the development server
+```bash
+npm run dev
+```
+
+The app will be accessible at `http://localhost:5173/`.
+
+### 4. Build for production
+```bash
+npm run build
+```
+
+---
+
+## 📞 Configuration
+
+To change the contact WhatsApp number across the entire site, simply update `WHATSAPP_NUMBER` in `src/config/whatsapp.js`:
+
+```javascript
+export const WHATSAPP_NUMBER = "916299728634";
+export const FORMATTED_PHONE = "+91 62997 28634";
+```
+
+---
+
+## 📄 License
+This project is open-source and available under the [MIT License](LICENSE).

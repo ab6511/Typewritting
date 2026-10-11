@@ -1,0 +1,121 @@
+/* Final CTA Section - Dark Neon YouSeller Theme */
+.final-cta-section {
+  padding: 6.5rem 0;
+  background-color: var(--color-bg-base);
+  position: relative;
+}
+
+.final-cta-card {
+  background: radial-gradient(circle at 50% 0%, rgba(0, 230, 118, 0.2) 0%, rgba(11, 16, 23, 0.85) 65%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 230, 118, 0.35);
+  border-radius: var(--radius-2xl);
+  padding: 5rem 3rem;
+  text-align: center;
+  box-shadow: 
+    0 30px 70px -15px rgba(0, 0, 0, 0.9),
+    0 0 50px rgba(0, 230, 118, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta-card::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(0, 230, 118, 0.25) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.final-cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.15rem;
+  background: rgba(0, 230, 118, 0.1);
+  color: var(--color-neon-green);
+  border-radius: var(--radius-full);
+  font-size: 0.825rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(0, 230, 118, 0.3);
+  box-shadow: 0 0 15px rgba(0, 230, 118, 0.15);
+}
+
+.final-cta-title {
+  font-size: clamp(2.35rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  color: var(--color-text-white);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.25rem;
+}
+
+.final-cta-description {
+  font-size: 1.15rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin-bottom: 2.75rem;
+}
+
+.final-cta-button-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.75rem;
+}
+
+.cta-trust-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.885rem;
+  font-weight: 600;
+  color: #CBD5E1;
+}
+
+.trust-item svg {
+  color: var(--color-neon-green);
+  filter: drop-shadow(0 0 6px rgba(0, 230, 118, 0.5));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .final-cta-section {
+    padding: 4rem 0;
+  }
+
+  .final-cta-card {
+    padding: 3.25rem 1.6rem;
+    border-radius: var(--radius-xl);
+  }
+
+  .final-cta-button-wrap .btn {
+    width: 100%;
+  }
+
+  .cta-trust-items {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+}

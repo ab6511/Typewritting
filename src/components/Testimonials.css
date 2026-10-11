@@ -1,0 +1,127 @@
+/* Testimonials Section - Dark Neon Theme */
+.testimonials-section {
+  padding: 6.5rem 0;
+  background-color: var(--color-bg-base);
+  position: relative;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(14, 21, 29, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  padding: 2.35rem 2rem;
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 230, 118, 0.4);
+  background: rgba(18, 28, 38, 0.85);
+  box-shadow: 
+    0 25px 45px -10px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(0, 230, 118, 0.15);
+}
+
+.testimonial-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.35rem;
+}
+
+.stars-row {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.quote-icon {
+  color: rgba(0, 230, 118, 0.25);
+}
+
+.testimonial-text {
+  font-size: 0.985rem;
+  color: #CBD5E1;
+  line-height: 1.7;
+  margin-bottom: 1.85rem;
+  flex-grow: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.author-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 230, 118, 0.12);
+  color: var(--color-neon-green);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 1px solid rgba(0, 230, 118, 0.25);
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.15);
+  flex-shrink: 0;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.author-name {
+  font-size: 0.985rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+}
+
+.verified-badge {
+  color: var(--color-neon-green);
+  display: inline-flex;
+}
+
+.author-role {
+  font-size: 0.825rem;
+  color: var(--color-text-secondary);
+}
+
+.star-filled {
+  color: #F59E0B;
+  fill: #F59E0B;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    padding: 1.85rem 1.6rem;
+  }
+}

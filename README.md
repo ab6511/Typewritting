@@ -71,8 +71,8 @@ npm run build
 To change the contact WhatsApp number across the entire site, simply update `WHATSAPP_NUMBER` in `src/config/whatsapp.js`:
 
 ```javascript
-export const WHATSAPP_NUMBER = "916299728634";
-export const FORMATTED_PHONE = "+91 62997 28634";
+export const WHATSAPP_NUMBER = "9876543210";
+export const FORMATTED_PHONE = "+91 98765 43210";
 ```
 
 ---

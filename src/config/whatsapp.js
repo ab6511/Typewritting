@@ -3,7 +3,7 @@
  * Update the phone number here to update all WhatsApp CTAs across the entire website.
  * Format: Country code followed by phone number with no '+' or dashes, e.g. "919876543210"
  */
-export const WHATSAPP_NUMBER = "916299728634";
+export const WHATSAPP_NUMBER = "6299728634";
 export const FORMATTED_PHONE = "+91 62997 28634";
 
 export const DEFAULT_MESSAGES = {
@@ -20,11 +20,15 @@ export const DEFAULT_MESSAGES = {
 
 /**
  * Returns direct WhatsApp click-to-chat URL with prefilled message.
+ * Automatically normalizes 10-digit Indian numbers with the 91 country code
+ * so WhatsApp routes to India (+91) rather than Indonesia (+62).
  * @param {string} message - Pre-filled message content
  * @returns {string} Direct URL
  */
 export const getWhatsAppUrl = (message = DEFAULT_MESSAGES.hero) => {
-  return `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+  const digits = String(WHATSAPP_NUMBER).replace(/\D/g, "");
+  const apiNumber = digits.length === 10 ? `91${digits}` : digits;
+  return `https://api.whatsapp.com/send?phone=${apiNumber}&text=${encodeURIComponent(message)}`;
 };
 
 /**

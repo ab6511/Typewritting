@@ -3,8 +3,8 @@
  * Update the phone number here to update all WhatsApp CTAs across the entire website.
  * Format: Country code followed by phone number with no '+' or dashes, e.g. "919876543210"
  */
-export const WHATSAPP_NUMBER = "919876543210";
-export const FORMATTED_PHONE = "+91 98765 43210";
+export const WHATSAPP_NUMBER = "916299728634";
+export const FORMATTED_PHONE = "+91 62997 28634";
 
 export const DEFAULT_MESSAGES = {
   quote: "Hi, I have a typewriting / data entry project and would like to get a quote. Please share your rates and turnaround time.",
@@ -19,10 +19,19 @@ export const DEFAULT_MESSAGES = {
 };
 
 /**
- * Opens WhatsApp in a new tab with a pre-filled encoded message.
+ * Returns direct WhatsApp click-to-chat URL with prefilled message.
+ * @param {string} message - Pre-filled message content
+ * @returns {string} Direct URL
+ */
+export const getWhatsAppUrl = (message = DEFAULT_MESSAGES.hero) => {
+  return `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+};
+
+/**
+ * Opens WhatsApp in a new tab with a pre-filled message directly in the chat with your number.
  * @param {string} message - The text message to prefill in WhatsApp chat
  */
 export const openWhatsApp = (message = DEFAULT_MESSAGES.hero) => {
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  const url = getWhatsAppUrl(message);
   window.open(url, "_blank", "noopener,noreferrer");
 };

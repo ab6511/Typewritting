@@ -48,7 +48,7 @@ export default function TrustLogos() {
             <div key={logo.id} className="trust-logo-card">
               <div className="logo-img-wrapper">
                 <img
-                  src={`${baseUrl}${logo.file}`}
+                  src={`${baseUrl}${logo.file}?v=2`}
                   alt={logo.name}
                   className="trust-logo-img"
                   loading="lazy"

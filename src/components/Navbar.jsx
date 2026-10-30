@@ -44,19 +44,26 @@ export default function Navbar() {
             <Keyboard className="logo-icon" size={19} />
           </div>
           <span className="logo-text">
-            <span className="logo-service">Service</span>
-            <span className="logo-biz">Biz</span>
+            <span className="logo-service">AI</span>
+            <span className="logo-biz">TypingHub</span>
           </span>
         </a>
 
         {/* Desktop Navigation Links */}
         <nav className="navbar-nav desktop-nav" aria-label="Main navigation">
           <a
+            href="#corporate-partners"
+            className="nav-link"
+            onClick={(e) => handleNavClick(e, 'corporate-partners')}
+          >
+            Brands
+          </a>
+          <a
             href="#services"
             className="nav-link"
             onClick={(e) => handleNavClick(e, 'services')}
           >
-            Services
+            Work Batches
           </a>
           <a
             href="#calculator"
@@ -64,13 +71,6 @@ export default function Navbar() {
             onClick={(e) => handleNavClick(e, 'calculator')}
           >
             Calculator
-          </a>
-          <a
-            href="#why-us"
-            className="nav-link"
-            onClick={(e) => handleNavClick(e, 'why-us')}
-          >
-            Why Hire Me
           </a>
           <a
             href="#how-it-works"
@@ -91,7 +91,7 @@ export default function Navbar() {
             className="nav-link"
             onClick={(e) => handleNavClick(e, 'contact')}
           >
-            Contact
+            Bonus
           </a>
         </nav>
 
@@ -101,9 +101,9 @@ export default function Navbar() {
             type="button"
             className="btn btn-neon nav-quote-btn"
             onClick={handleQuoteClick}
-            aria-label="Get a Quote via WhatsApp"
+            aria-label="Claim ₹500 Welcome Bonus via WhatsApp"
           >
-            <span>Get a Quote</span>
+            <span>Claim ₹500 Bonus</span>
             <ArrowUpRight size={17} className="btn-arrow" />
           </button>
         </div>
@@ -124,25 +124,25 @@ export default function Navbar() {
       <div className={`mobile-nav-menu ${isMobileMenuOpen ? 'open' : ''}`}>
         <nav className="mobile-nav-links" aria-label="Mobile navigation">
           <a
+            href="#corporate-partners"
+            className="mobile-nav-link"
+            onClick={(e) => handleNavClick(e, 'corporate-partners')}
+          >
+            Corporate Brands
+          </a>
+          <a
             href="#services"
             className="mobile-nav-link"
             onClick={(e) => handleNavClick(e, 'services')}
           >
-            Services
+            Work Batches (₹400-₹500/pg)
           </a>
           <a
             href="#calculator"
             className="mobile-nav-link"
             onClick={(e) => handleNavClick(e, 'calculator')}
           >
-            Calculator
-          </a>
-          <a
-            href="#why-us"
-            className="mobile-nav-link"
-            onClick={(e) => handleNavClick(e, 'why-us')}
-          >
-            Why Hire Me
+            Earnings Calculator
           </a>
           <a
             href="#how-it-works"
@@ -156,14 +156,14 @@ export default function Navbar() {
             className="mobile-nav-link"
             onClick={(e) => handleNavClick(e, 'testimonials')}
           >
-            Reviews
+            Reviews (8)
           </a>
           <a
             href="#contact"
             className="mobile-nav-link"
             onClick={(e) => handleNavClick(e, 'contact')}
           >
-            Contact
+            Claim Welcome Bonus
           </a>
           
           <div className="mobile-action-wrap">
@@ -172,7 +172,7 @@ export default function Navbar() {
               className="btn btn-neon btn-full"
               onClick={handleQuoteClick}
             >
-              <span>Get a Quote</span>
+              <span>Claim ₹500 Welcome Bonus</span>
               <ArrowUpRight size={18} />
             </button>
           </div>

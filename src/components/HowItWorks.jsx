@@ -1,28 +1,28 @@
 import React from 'react';
-import { FileUp, FileCheck, CheckCircle2, ArrowRight } from 'lucide-react';
+import { UserCheck, Gift, Coins, ArrowRight, Sparkles } from 'lucide-react';
 import './HowItWorks.css';
 
 const steps = [
   {
     stepNumber: '01',
-    title: 'Share your files or sample',
+    title: 'Open Account & Get Website Access',
     description:
-      'Send your handwritten pages, audio recordings, scanned PDFs, or raw data spreadsheet via WhatsApp or email.',
-    icon: FileUp,
+      'We set up your worker profile in under 2 minutes and provide full access credentials to the AI typing & LLM training portal.',
+    icon: UserCheck,
   },
   {
     stepNumber: '02',
-    title: 'Get an instant quote',
+    title: 'Claim ₹500 Welcome Bonus & Pick Batches',
     description:
-      'I review your page count, formatting guidelines, and deadline to provide a transparent, budget-friendly quote.',
-    icon: FileCheck,
+      'Your ₹500 Welcome Bonus is immediately credited. Browse active typing tasks from Amazon, Zomato, and global corporate brands.',
+    icon: Gift,
   },
   {
     stepNumber: '03',
-    title: 'Receive polished files',
+    title: 'Type with AI & Earn ₹400 – ₹500 / Page',
     description:
-      'Get your fully formatted Word documents, error-free Excel sheets, or PDFs on schedule with free minor revisions.',
-    icon: CheckCircle2,
+      'Use built-in AI assistance to complete pages 3x faster. Get daily or weekly direct transfers directly to your UPI ID or Bank account.',
+    icon: Coins,
   },
 ];
 
@@ -33,11 +33,12 @@ export default function HowItWorks() {
         {/* Section Header */}
         <div className="section-header">
           <div className="section-badge">
-            <span>Simple 3-Step Process</span>
+            <Sparkles size={14} />
+            <span>Fast &amp; Easy 3-Step Start</span>
           </div>
-          <h2 className="section-title">How It Works</h2>
+          <h2 className="section-title">How To Start Working &amp; Earning</h2>
           <p className="section-subtitle">
-            Hiring freelance support is fast and seamless. From file submission to final error-free delivery in three easy steps.
+            Get your account opened, claim your ₹500 Welcome Bonus, and begin AI-assisted typing work today.
           </p>
         </div>
 

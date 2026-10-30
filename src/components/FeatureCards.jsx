@@ -1,25 +1,24 @@
-import React from 'react';
-import { ShieldCheck, Zap, Lock } from 'lucide-react';
+import { Coins, Bot, Gift } from 'lucide-react';
 import './FeatureCards.css';
 
 const features = [
   {
-    id: 'accuracy',
-    icon: ShieldCheck,
-    title: '99%+ Accuracy',
-    description: 'Meticulous proofreading and zero-error promise for all documents.',
+    id: 'payout-rate',
+    icon: Coins,
+    title: '₹400 – ₹500 Per Page',
+    description: 'Guaranteed top industry rates with daily and weekly direct UPI/bank payouts.',
   },
   {
-    id: 'rapid-delivery',
-    icon: Zap,
-    title: 'Express turnaround',
-    description: 'Rush same-day delivery available for urgent typing and data tasks.',
+    id: 'ai-assisted',
+    icon: Bot,
+    title: 'AI-Assisted LLM Training',
+    description: 'Train cutting-edge AI models for Amazon, Zomato & top corporate brands with smart AI tools.',
   },
   {
-    id: 'confidential',
-    icon: Lock,
-    title: '100% Confidential',
-    description: 'Strict data privacy and confidentiality for sensitive records.',
+    id: 'welcome-bonus',
+    icon: Gift,
+    title: 'Account Access + Welcome Bonus',
+    description: 'Instant account setup, immediate website portal access, and ₹500 Welcome Bonus credited.',
   },
 ];
 

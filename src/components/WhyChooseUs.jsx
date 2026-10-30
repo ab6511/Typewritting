@@ -1,44 +1,44 @@
 import React from 'react';
-import { UserCheck, Zap, DollarSign, ShieldCheck, MessageCircle, CheckCircle2 } from 'lucide-react';
-import { openWhatsApp } from '../config/whatsapp';
+import { Coins, Zap, Gift, Bot, MessageCircle, CheckCircle2 } from 'lucide-react';
+import { openWhatsApp, DEFAULT_MESSAGES } from '../config/whatsapp';
 import './WhyChooseUs.css';
 
 const benefits = [
   {
-    icon: UserCheck,
-    title: 'Meticulous Accuracy',
+    icon: Coins,
+    title: 'Highest Market Pay: ₹400 – ₹500 / Page',
     description:
-      'Double-checked entries, manual proofreading, and spell-checking ensure your final documents are 100% clean and error-free.',
+      'Earn top rates for preparing and typing training datasets for AI and Large Language Models with zero delays in payout.',
   },
   {
     icon: Zap,
-    title: 'Fast Turnaround',
+    title: 'More & More Work Continuously',
     description:
-      'Prompt project delivery with rush same-day options available for urgent deadlines, submissions, and business filings.',
+      'Never run out of work. As soon as you submit a batch for Amazon or Zomato, the next corporate dataset is immediately assigned.',
   },
   {
-    icon: DollarSign,
-    title: 'Transparent Pricing',
+    icon: Gift,
+    title: 'Guaranteed ₹500 Welcome Bonus',
     description:
-      'Clear, budget-friendly per-page or per-hour pricing with upfront quotes. No hidden extras or agency markups.',
+      'We open your account in 2 minutes and credit a ₹500 Welcome Bonus directly into your worker wallet on day 1.',
   },
   {
-    icon: ShieldCheck,
-    title: 'Guaranteed Confidentiality',
+    icon: Bot,
+    title: 'Assisted By Smart AI Tools',
     description:
-      'Strict confidentiality protocols to safeguard your business datasets, personal manuscripts, and sensitive records.',
+      'Our website portal includes AI-assisted typing and error-checking tools so you complete pages 3x faster with 100% accuracy.',
   },
 ];
 
 const stats = [
-  { value: '80+ WPM', label: 'Typing Speed' },
-  { value: '99.9%', label: 'Accuracy Rate' },
-  { value: '500+', label: 'Delivered Projects' },
+  { value: '₹400 – ₹500', label: 'Per Page Pay' },
+  { value: '₹500', label: 'Welcome Bonus' },
+  { value: '24/7', label: 'Work Flow Available' },
 ];
 
 export default function WhyChooseUs() {
   const handleConsultClick = () => {
-    openWhatsApp('Hi, I want to discuss a typewriting / data entry project and check your availability.');
+    openWhatsApp(DEFAULT_MESSAGES.welcomeBonus);
   };
 
   return (
@@ -49,16 +49,16 @@ export default function WhyChooseUs() {
           <div className="why-us-left">
             <div className="section-badge">
               <CheckCircle2 size={15} />
-              <span>Dedicated Solo Freelancer</span>
+              <span>Verified AI Typing Platform</span>
             </div>
             
             <h2 className="why-us-title">
-              Why hire a dedicated <br className="why-us-br" />
-              freelance specialist?
+              Why work with our <br className="why-us-br" />
+              AI training network?
             </h2>
 
             <p className="why-us-description">
-              No agency overhead or junior delegation. You work one-on-one with a detail-oriented professional who ensures every single word, table, and data row is captured with surgical precision.
+              Leading tech companies and corporate giants like Amazon and Zomato rely on our network to train their next-generation AI and LLM models. We ensure our typists get paid the highest industry rates, receive instant account access, and always have unlimited work.
             </p>
 
             {/* Quick Stats Grid */}
@@ -78,7 +78,7 @@ export default function WhyChooseUs() {
                 onClick={handleConsultClick}
               >
                 <MessageCircle size={18} />
-                <span>Hire Me on WhatsApp</span>
+                <span>Open Account &amp; Claim Bonus</span>
               </button>
             </div>
           </div>

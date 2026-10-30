@@ -7,15 +7,16 @@ export const WHATSAPP_NUMBER = "9876543210";
 export const FORMATTED_PHONE = "+91 98765 43210";
 
 export const DEFAULT_MESSAGES = {
-  quote: "Hi, I have a typewriting / data entry project and would like to get a quote. Please share your rates and turnaround time.",
-  header: "Hi, I would like to get a quote for my typing or data entry work.",
-  hero: "Hi, I saw your portfolio and need professional typewriting / data entry assistance. Please share more details.",
-  finalCta: "Hi, I have a project ready for typewriting / data entry and would like to hire your freelance services.",
-  floating: "Hi, I need quick assistance with typewriting or data entry work.",
-  typewriting: "Hi, I have documents that require fast and accurate typewriting/copy typing.",
-  dataEntry: "Hi, I have an Excel / spreadsheet data entry project that needs accurate processing.",
-  conversion: "Hi, I need PDF / scanned image conversion into editable Word/Excel formats.",
-  research: "Hi, I need help with web research and data extraction into a structured sheet.",
+  quote: "Hi, I want to start AI & typing work for LLM training at ₹400-₹500/page. Please open my account and share website access details.",
+  header: "Hi, I want to open my worker account, get website access, and claim my ₹500 Welcome Bonus for AI typing work.",
+  hero: "Hi, I am interested in AI and typing work for LLM training (₹400-₹500 per page). Please open my account and give me website access.",
+  finalCta: "Hi, I am ready to start typing work for corporate brands like Amazon and Zomato. Please open my account, grant website access, and credit my Welcome Bonus.",
+  floating: "Hi, I want to join the AI typing & LLM training program and claim the Welcome Bonus.",
+  welcomeBonus: "Hi, I am ready to open my account and claim the ₹500 Welcome Bonus + website portal access.",
+  typewriting: "Hi, I want to do AI-assisted typewriting & LLM training tasks at ₹400-₹500 per page.",
+  dataEntry: "Hi, I want to work on Amazon & Zomato data entry and corporate transcription projects.",
+  conversion: "Hi, I want to work on PDF/OCR text conversion and document digitizing for corporate brands.",
+  research: "Hi, I want to work on AI prompt annotation and corporate dataset labeling.",
 };
 
 /**

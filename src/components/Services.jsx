@@ -1,43 +1,43 @@
 import React from 'react';
-import { Keyboard, FileSpreadsheet, FileCheck, Database, ArrowRight } from 'lucide-react';
+import { Bot, FileSpreadsheet, FileCheck, Database, ArrowRight, Sparkles } from 'lucide-react';
 import { openWhatsApp, DEFAULT_MESSAGES } from '../config/whatsapp';
 import './Services.css';
 
 const servicesData = [
   {
-    id: 'typewriting',
-    icon: Keyboard,
-    title: 'Professional Typewriting',
+    id: 'llm-training',
+    icon: Bot,
+    title: 'AI & LLM Training Typing',
     description:
-      'High-speed typing from handwritten manuscripts, scanned pages, legal contracts, audio recordings, and books into clean, properly formatted Word documents.',
-    badge: '80+ WPM Speed',
+      'Transcribe, type, and format training datasets for Large Language Models (LLMs) with built-in AI assistance for faster completion.',
+    badge: '₹400 – ₹500 / Page',
     whatsappMessage: DEFAULT_MESSAGES.typewriting,
   },
   {
-    id: 'data-entry',
+    id: 'amazon-zomato',
     icon: FileSpreadsheet,
-    title: 'Excel & Data Entry',
+    title: 'Amazon & Zomato Data Entry',
     description:
-      'Accurate data input, spreadsheet cleansing, invoice digitizing, product listings, and CRM record updates in formatted Excel or Google Sheets.',
-    badge: 'Zero-Error Focus',
+      'Process high-volume product catalogs, customer reviews, restaurant menus, and order transcripts for leading e-commerce & food tech brands.',
+    badge: 'Daily Corporate Batches',
     whatsappMessage: DEFAULT_MESSAGES.dataEntry,
   },
   {
-    id: 'conversion',
+    id: 'ocr-digitization',
     icon: FileCheck,
-    title: 'PDF to Word / Excel Conversion',
+    title: 'Document AI & OCR Transcription',
     description:
-      'Flawless manual recreation and conversion of complex documents, preserving tables, margins, fonts, headers, and formulas without automatic software errors.',
-    badge: 'Pixel-Perfect Layout',
+      'Convert scanned pages, invoices, legal records, and handwritten notes into structured text to feed corporate machine learning models.',
+    badge: 'AI-Assisted Speed',
     whatsappMessage: DEFAULT_MESSAGES.conversion,
   },
   {
-    id: 'research',
+    id: 'prompt-annotation',
     icon: Database,
-    title: 'Web Research & Data Mining',
+    title: 'Prompt & Response Annotation',
     description:
-      'Targeted online research, company directory mining, contact extraction, and compilation of structured business datasets ready for your operations.',
-    badge: 'Verified Sources',
+      'Review, label, and type prompt-response pairs used for RLHF (Reinforcement Learning from Human Feedback) model development.',
+    badge: 'High Value Payout',
     whatsappMessage: DEFAULT_MESSAGES.research,
   },
 ];
@@ -53,11 +53,14 @@ export default function Services() {
         {/* Section Header */}
         <div className="section-header">
           <div className="section-badge">
-            <span>Specialized Capabilities</span>
+            <Sparkles size={14} />
+            <span>AI Development &amp; Typing Work</span>
           </div>
-          <h2 className="section-title">Freelance Services</h2>
+          <h2 className="section-title">
+            Specialized Work Batches <span className="highlight-neon">(₹400 – ₹500/Page)</span>
+          </h2>
           <p className="section-subtitle">
-            Precision typewriting, spreadsheet management, and document formatting tailored to your deadlines.
+            Work with AI-assisted software tools to complete corporate typing and LLM training batches for Amazon, Zomato, and enterprise brands.
           </p>
         </div>
 
@@ -81,9 +84,9 @@ export default function Services() {
                   type="button"
                   className="service-learn-more"
                   onClick={() => handleServiceInquiry(service.whatsappMessage)}
-                  aria-label={`Inquire about ${service.title} on WhatsApp`}
+                  aria-label={`Claim ${service.title} batch on WhatsApp`}
                 >
-                  <span>Order Service</span>
+                  <span>Start This Work</span>
                   <ArrowRight size={16} className="learn-more-icon" />
                 </button>
               </div>

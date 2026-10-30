@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
-import { Calculator, ArrowUpRight } from 'lucide-react';
+import { Calculator, ArrowUpRight, Gift, CheckCircle2 } from 'lucide-react';
 import { openWhatsApp } from '../config/whatsapp';
 import './EarningsCalculator.css';
 
 export default function EarningsCalculator() {
-  const [dataPerHour, setDataPerHour] = useState(60);
-  const [hoursDaily, setHoursDaily] = useState(8);
-  const [daysWeekly, setDaysWeekly] = useState(7);
+  const [pagesPerDay, setPagesPerDay] = useState(8);
+  const [ratePerPage, setRatePerPage] = useState(450);
+  const [daysWeekly, setDaysWeekly] = useState(6);
   const [showResults, setShowResults] = useState(true);
   const [isCalculatedAnim, setIsCalculatedAnim] = useState(false);
 
-  // Exact formula matching the screenshot benchmark:
-  // (60 data/hr * 8 hrs/day) = ₹480 Daily Earning (₹1 per data unit)
-  // (₹480 * 7 days/wk) = ₹3,360 Weekly Earning
-  // (₹3,360 * 4.3 weeks/mo) = ₹14,448 Monthly Earning
-  // (₹3,360 * 52 weeks/yr) = ₹174,720 Yearly Earning
-  const dailyEarnings = dataPerHour * hoursDaily;
+  // Exact formula matching: ₹400 to ₹500 per page
+  // Daily = pagesPerDay * ratePerPage
+  // Weekly = dailyEarnings * daysWeekly
+  // Monthly = weeklyEarnings * 4.3
+  // Yearly = weeklyEarnings * 52
+  const dailyEarnings = pagesPerDay * ratePerPage;
   const weeklyEarnings = dailyEarnings * daysWeekly;
   const monthlyEarnings = Math.round(weeklyEarnings * 4.3);
   const yearlyEarnings = weeklyEarnings * 52;
+  const welcomeBonus = 500;
 
   const handleCalculateClick = () => {
     setShowResults(true);
@@ -27,15 +28,15 @@ export default function EarningsCalculator() {
   };
 
   const handleWhatsAppInquiry = () => {
-    const message = `Hi, I calculated my typing & data entry workload on your website:
-• Typing rate: ${dataPerHour} data/hr
-• Daily hours: ${hoursDaily} hrs/day
-• Weekly days: ${daysWeekly} days/week
-• Daily Earning: ₹${dailyEarnings}
-• Weekly Earning: ₹${weeklyEarnings}
-• Monthly Earning: ₹${monthlyEarnings}
-• Yearly Earning: ₹${yearlyEarnings}
-I would like to discuss this and get started!`;
+    const message = `Hi, I calculated my typing earnings for LLM training on your website:
+• Pages typed daily: ${pagesPerDay} pages/day
+• Rate per page: ₹${ratePerPage}/page
+• Days per week: ${daysWeekly} days/week
+• Daily Earning: ₹${dailyEarnings.toLocaleString('en-IN')}
+• Weekly Earning: ₹${weeklyEarnings.toLocaleString('en-IN')}
+• Monthly Earning: ₹${monthlyEarnings.toLocaleString('en-IN')}
+• Guaranteed Welcome Bonus: ₹${welcomeBonus}
+Please open my account, provide website access, and credit my Welcome Bonus so I can get started!`;
     openWhatsApp(message);
   };
 
@@ -46,82 +47,110 @@ I would like to discuss this and get started!`;
         <div className="section-header">
           <div className="section-badge">
             <Calculator size={15} />
-            <span>Interactive Estimator</span>
+            <span>Interactive Page Earning Calculator</span>
           </div>
           <h2 className="section-title">
-            Calculate Your <span className="highlight-neon">Earning!</span>
+            Calculate Your <span className="highlight-neon">Per-Page Earning!</span>
           </h2>
           <p className="section-subtitle">
-            Accurate estimation matching your typing speed and available working schedule.
+            We pay ₹400 to ₹500 per page for AI-assisted typing and LLM training work. See how much you can earn!
           </p>
         </div>
 
         {/* Main Calculator Card */}
         <div className="calculator-card">
           <div className="calculator-header">
-            <h3 className="calculator-main-title">Calculate Your Earning!</h3>
+            <div className="calc-header-title-row">
+              <h3 className="calculator-main-title">Calculate Your Typing Income</h3>
+              <div className="calc-bonus-pill">
+                <Gift size={14} />
+                <span>+₹500 Welcome Bonus</span>
+              </div>
+            </div>
+            <p className="calc-header-desc">
+              AI-assisted typing tools allow typists to easily complete 6 to 15 pages per day.
+            </p>
           </div>
 
           <div className="calculator-body">
-            {/* Input Row 1: Data per hour */}
+            {/* Input Row 1: Pages per day */}
             <div className="calc-input-group">
               <div className="calc-label-row">
-                <label htmlFor="dataPerHour" className="calc-label">
-                  How much data you can type in 1 hour:
+                <label htmlFor="pagesPerDay" className="calc-label">
+                  Pages you can type per day:
                 </label>
                 <div className="calc-number-box">
                   <input
                     type="number"
-                    id="dataPerHourNum"
+                    id="pagesPerDayNum"
                     min="1"
-                    max="300"
-                    value={dataPerHour}
-                    onChange={(e) => setDataPerHour(Math.max(1, Number(e.target.value)))}
+                    max="30"
+                    value={pagesPerDay}
+                    onChange={(e) => setPagesPerDay(Math.max(1, Math.min(30, Number(e.target.value))))}
                     className="calc-input-number"
                   />
+                  <span className="unit-label">pages</span>
                 </div>
               </div>
               <div className="calc-slider-wrapper">
                 <input
                   type="range"
-                  id="dataPerHour"
-                  min="10"
-                  max="150"
-                  step="5"
-                  value={dataPerHour}
-                  onChange={(e) => setDataPerHour(Number(e.target.value))}
+                  id="pagesPerDay"
+                  min="1"
+                  max="25"
+                  step="1"
+                  value={pagesPerDay}
+                  onChange={(e) => setPagesPerDay(Number(e.target.value))}
                   className="calc-range-slider"
                 />
               </div>
             </div>
 
-            {/* Input Row 2: Hours daily */}
+            {/* Input Row 2: Pay Rate Per Page (₹400 - ₹500) */}
             <div className="calc-input-group">
               <div className="calc-label-row">
-                <label htmlFor="hoursDaily" className="calc-label">
-                  How many hour you can work daily:
+                <label className="calc-label">
+                  Select Payout Rate Per Page (₹400 – ₹500):
                 </label>
-                <div className="calc-number-box">
+                <div className="calc-number-box highlight-rate-box">
+                  <span className="rate-currency">₹</span>
                   <input
                     type="number"
-                    id="hoursDailyNum"
-                    min="1"
-                    max="24"
-                    value={hoursDaily}
-                    onChange={(e) => setHoursDaily(Math.max(1, Math.min(24, Number(e.target.value))))}
+                    id="ratePerPageNum"
+                    min="400"
+                    max="500"
+                    step="10"
+                    value={ratePerPage}
+                    onChange={(e) => setRatePerPage(Math.max(400, Math.min(500, Number(e.target.value))))}
                     className="calc-input-number"
                   />
+                  <span className="unit-label">/page</span>
                 </div>
               </div>
+              
+              {/* Preset Rate Chips for quick selection */}
+              <div className="rate-preset-chips">
+                {[400, 425, 450, 475, 500].map((rate) => (
+                  <button
+                    key={rate}
+                    type="button"
+                    className={`rate-chip ${ratePerPage === rate ? 'active' : ''}`}
+                    onClick={() => setRatePerPage(rate)}
+                  >
+                    ₹{rate} / Page
+                  </button>
+                ))}
+              </div>
+
               <div className="calc-slider-wrapper">
                 <input
                   type="range"
-                  id="hoursDaily"
-                  min="1"
-                  max="16"
-                  step="1"
-                  value={hoursDaily}
-                  onChange={(e) => setHoursDaily(Number(e.target.value))}
+                  id="ratePerPage"
+                  min="400"
+                  max="500"
+                  step="10"
+                  value={ratePerPage}
+                  onChange={(e) => setRatePerPage(Number(e.target.value))}
                   className="calc-range-slider"
                 />
               </div>
@@ -143,6 +172,7 @@ I would like to discuss this and get started!`;
                     onChange={(e) => setDaysWeekly(Math.max(1, Math.min(7, Number(e.target.value))))}
                     className="calc-input-number"
                   />
+                  <span className="unit-label">days</span>
                 </div>
               </div>
               <div className="calc-slider-wrapper">
@@ -166,51 +196,73 @@ I would like to discuss this and get started!`;
                 className="btn-calculate"
                 onClick={handleCalculateClick}
               >
-                <span>Calculate</span>
+                <span>Calculate Total Income</span>
               </button>
             </div>
 
-            {/* Income Display Table matching the exact screenshot */}
+            {/* Income Display Table */}
             {showResults && (
               <div className={`income-panel ${isCalculatedAnim ? 'pulse-anim' : ''}`}>
-                <h4 className="income-heading">Your Income</h4>
+                <div className="income-header-row">
+                  <h4 className="income-heading">Your Projected Income</h4>
+                  <span className="income-verified-badge">
+                    <CheckCircle2 size={14} />
+                    Verified ₹{ratePerPage}/Page Rate
+                  </span>
+                </div>
 
                 <div className="income-table">
                   {/* Row 1 Header */}
                   <div className="table-row table-header-row">
-                    <div className="table-cell">Daily Earning</div>
-                    <div className="table-cell">Weekly Earning</div>
+                    <div className="table-cell">Daily Earning ({pagesPerDay} pages)</div>
+                    <div className="table-cell">Weekly Earning ({daysWeekly} days)</div>
                   </div>
                   {/* Row 1 Values */}
                   <div className="table-row table-value-row">
-                    <div className="table-cell table-value">₹{dailyEarnings}</div>
-                    <div className="table-cell table-value">₹{weeklyEarnings}</div>
+                    <div className="table-cell table-value">₹{dailyEarnings.toLocaleString('en-IN')}</div>
+                    <div className="table-cell table-value">₹{weeklyEarnings.toLocaleString('en-IN')}</div>
                   </div>
 
                   {/* Row 2 Header */}
                   <div className="table-row table-header-row">
-                    <div className="table-cell">Monthly Earning</div>
+                    <div className="table-cell">Monthly Earning (est.)</div>
                     <div className="table-cell">Yearly Earning</div>
                   </div>
                   {/* Row 2 Values */}
                   <div className="table-row table-value-row">
-                    <div className="table-cell table-value">₹{monthlyEarnings}</div>
-                    <div className="table-cell table-value">₹{yearlyEarnings}</div>
+                    <div className="table-cell table-value highlight-value">₹{monthlyEarnings.toLocaleString('en-IN')}</div>
+                    <div className="table-cell table-value highlight-value">₹{yearlyEarnings.toLocaleString('en-IN')}</div>
                   </div>
+                </div>
+
+                {/* Instant Welcome Bonus Callout inside calculator */}
+                <div className="calc-bonus-notice">
+                  <div className="bonus-notice-left">
+                    <div className="bonus-badge-icon">
+                      <Gift size={18} />
+                    </div>
+                    <div>
+                      <span className="bonus-notice-title">Instant Welcome Bonus Included</span>
+                      <p className="bonus-notice-sub">
+                        Get an extra <strong>₹500 Welcome Bonus</strong> credited to your account upon activation!
+                      </p>
+                    </div>
+                  </div>
+                  <div className="bonus-amount-badge">+₹500 BONUS</div>
                 </div>
 
                 {/* WhatsApp Next Step */}
                 <div className="calc-cta-box">
                   <div className="calc-cta-info">
-                    <p className="cta-headline">Ready to claim your typing &amp; data entry work?</p>
-                    <p className="cta-sub">Confirm your daily schedule directly over WhatsApp.</p>
+                    <p className="cta-headline">Ready to open account &amp; claim your ₹500 bonus?</p>
+                    <p className="cta-sub">We grant immediate website access and assign your first brand typing batch.</p>
                   </div>
                   <button
                     type="button"
                     className="btn btn-neon calc-whatsapp-btn"
                     onClick={handleWhatsAppInquiry}
                   >
-                    <span>Confirm on WhatsApp</span>
+                    <span>Open Account &amp; Claim Bonus</span>
                     <ArrowUpRight size={17} />
                   </button>
                 </div>

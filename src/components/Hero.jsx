@@ -1,20 +1,20 @@
 import React from 'react';
-import { Sparkles, MessageCircle, ArrowUpRight, ArrowRight, ShieldCheck, CheckCircle2, FileText, Smartphone, Laptop } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, CheckCircle2, FileText, Gift, Bot, Coins } from 'lucide-react';
 import { openWhatsApp, DEFAULT_MESSAGES } from '../config/whatsapp';
 import FeatureCards from './FeatureCards';
 import './Hero.css';
 
 export default function Hero() {
-  const handlePrimaryQuote = () => {
-    openWhatsApp(DEFAULT_MESSAGES.hero);
+  const handleClaimBonus = () => {
+    openWhatsApp(DEFAULT_MESSAGES.welcomeBonus);
   };
 
-  const handleExploreServices = (e) => {
+  const handleScrollToCalculator = (e) => {
     e.preventDefault();
-    const servicesSection = document.getElementById('services');
-    if (servicesSection) {
+    const calcSection = document.getElementById('calculator');
+    if (calcSection) {
       const navHeight = 76;
-      const elementPosition = servicesSection.getBoundingClientRect().top;
+      const elementPosition = calcSection.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navHeight;
       window.scrollTo({
         top: offsetPosition,
@@ -36,48 +36,66 @@ export default function Hero() {
           {/* Pill Badge at the top */}
           <div className="hero-badge">
             <span className="badge-pulse-dot" />
-            <Sparkles size={15} className="hero-badge-icon" />
-            <span>Professional Freelance Specialist</span>
+            <Bot size={15} className="hero-badge-icon" />
+            <span>AI &amp; Typing Work • LLM Training • ₹400 – ₹500 / Page</span>
           </div>
 
-          {/* Main Heading with Neon Green Emphasis (like reference) */}
+          {/* Main Heading with Neon Green Emphasis */}
           <h1 className="hero-title">
-            Fast <span className="hero-highlight">typewriting &amp; accurate</span><br className="hero-br" />
-            data entry for your work
+            AI &amp; Typing Work: <span className="hero-highlight">Earn ₹400 – ₹500 Per Page</span><br className="hero-br" />
+            Assisted By AI For LLM Training
           </h1>
 
           {/* Centered Description */}
           <p className="hero-description">
-            From rush copy typing and handwritten document transcription to large-scale Excel spreadsheets, I deliver 100% error-free precision, clean formatting, and confidential turnaround you can rely on.
+            Prepare, type, and verify high-accuracy text datasets to train and develop next-generation AI and Large Language Models (LLMs) for corporate leaders like <strong>Amazon</strong> and <strong>Zomato</strong>. We open your account instantly with full website portal access + guaranteed Welcome Bonus!
           </p>
+
+          {/* Welcome Bonus Callout Banner */}
+          <div className="hero-bonus-banner" onClick={handleClaimBonus} role="button" tabIndex={0}>
+            <div className="bonus-icon-wrap">
+              <Gift size={20} className="bonus-icon" />
+            </div>
+            <div className="bonus-info">
+              <span className="bonus-tag">WELCOME BONUS OFFER</span>
+              <span className="bonus-text">
+                Instant Account Opening &amp; Website Access + <strong>₹500 Welcome Bonus</strong> Credited Today!
+              </span>
+            </div>
+            <span className="bonus-action">
+              Claim Now <ArrowRight size={14} />
+            </span>
+          </div>
 
           {/* Neon CTA Buttons */}
           <div className="hero-cta-group">
             <button
               type="button"
               className="btn btn-neon hero-btn-primary"
-              onClick={handlePrimaryQuote}
-              aria-label="Get a Free Quote via WhatsApp"
+              onClick={handleClaimBonus}
+              aria-label="Open Account & Claim Welcome Bonus"
             >
-              <span>Get a Free Quote</span>
+              <Gift size={18} />
+              <span>Open Account &amp; Claim ₹500 Bonus</span>
               <ArrowUpRight size={18} />
             </button>
 
             <a
-              href="#services"
+              href="#calculator"
               className="btn btn-glass hero-btn-secondary"
-              onClick={handleExploreServices}
-              aria-label="Explore freelance services"
+              onClick={handleScrollToCalculator}
+              aria-label="Calculate per-page typing earnings"
             >
-              <span>Explore Services</span>
+              <Coins size={16} />
+              <span>Calculate Earnings (₹400-₹500/Page)</span>
               <ArrowRight size={16} />
             </a>
           </div>
         </div>
 
-        {/* Visual Showcase: Dual Device Mockup (Desktop + Phone) from reference */}
+        {/* Visual Showcase: Dual Device Mockup (Desktop + Phone) */}
         <div className="hero-mockup-stage">
-          {/* Decorative Dot Matrix in Bottom-Left (matching reference) */}
+          {/* Decorative Dot Matrix in Bottom-Left */}
           <div className="dot-matrix-decor" aria-hidden="true">
             {[...Array(20)].map((_, i) => (
               <span key={i} />
@@ -95,14 +113,14 @@ export default function Hero() {
               </div>
               <div className="window-title">
                 <span className="window-tab active">
-                  <FileText size={13} />
-                  <span>Typewriting &amp; Data Entry Hub</span>
+                  <Bot size={13} />
+                  <span>AI &amp; LLM Training Workstation</span>
                 </span>
-                <span className="window-tab">WhatsApp Workstation</span>
+                <span className="window-tab">₹400 – ₹500 / Page Queue</span>
               </div>
               <div className="window-status-pill">
                 <span className="live-status-dot" />
-                <span>Online &amp; Taking Orders</span>
+                <span>Daily Batches Active</span>
               </div>
             </div>
 
@@ -111,27 +129,27 @@ export default function Hero() {
               {/* Left Mini Sidebar */}
               <div className="mockup-sidebar">
                 <div className="sidebar-search">
-                  <span>Recent Work Orders</span>
+                  <span>Corporate Brand Tasks</span>
                 </div>
                 <div className="sidebar-item active">
-                  <div className="item-avatar">RS</div>
+                  <div className="item-avatar">AZ</div>
                   <div className="item-details">
-                    <span className="item-title">Dr. Rajesh Sharma</span>
-                    <span className="item-subtitle">180p Manuscript • Delivered ✓</span>
+                    <span className="item-title">Amazon E-Commerce LLM</span>
+                    <span className="item-subtitle">12 Pages • ₹5,400 Paid ✓</span>
                   </div>
                 </div>
                 <div className="sidebar-item">
-                  <div className="item-avatar">PK</div>
+                  <div className="item-avatar">ZM</div>
                   <div className="item-details">
-                    <span className="item-title">Priya Kapoor</span>
-                    <span className="item-subtitle">2,500 SKU Excel • Cleaned ✓</span>
+                    <span className="item-title">Zomato Menu OCR Typing</span>
+                    <span className="item-subtitle">8 Pages • ₹3,600 Paid ✓</span>
                   </div>
                 </div>
                 <div className="sidebar-item">
-                  <div className="item-avatar">AV</div>
+                  <div className="item-avatar">CP</div>
                   <div className="item-details">
-                    <span className="item-title">Amit Verma Advocate</span>
-                    <span className="item-subtitle">Court Petition • Fast 6h ✓</span>
+                    <span className="item-title">Corporate Query Training</span>
+                    <span className="item-subtitle">15 Pages • ₹6,750 Paid ✓</span>
                   </div>
                 </div>
               </div>
@@ -140,34 +158,38 @@ export default function Hero() {
               <div className="mockup-workspace">
                 <div className="workspace-header">
                   <div className="doc-meta">
-                    <span className="doc-name">Project_Documentation_Final.docx</span>
-                    <span className="doc-stat">Speed: 82 WPM • Accuracy: 99.9%</span>
+                    <span className="doc-name">Amazon_LLM_Catalog_Training_Task#849.jsonl</span>
+                    <span className="doc-stat">Rate: ₹450 / Page • AI-Assisted Typing: 3x Fast</span>
                   </div>
                   <span className="verified-chip">
                     <CheckCircle2 size={13} />
-                    Verified Formatted
+                    AI Verified &amp; Approved
                   </span>
                 </div>
 
                 <div className="mockup-chat-feed">
                   <div className="chat-bubble client">
-                    <p>Hi, I need this 45-page scanned report typed into editable Word with all table columns preserved by tomorrow morning.</p>
-                    <span className="bubble-time">10:14 AM</span>
+                    <p>
+                      <strong>Batch Assigned:</strong> 10 Pages of OCR product attributes for Amazon &amp; Zomato LLM training models. AI auto-assist and spell-verification active.
+                    </p>
+                    <span className="bubble-time">Task Rate: ₹450 / Page</span>
                   </div>
                   <div className="chat-bubble freelancer">
-                    <p>Done! Your documents have been typed, proofread, and formatted with zero errors. Word &amp; PDF files are attached below.</p>
+                    <p>
+                      <strong>Completed &amp; Transcribed:</strong> 10 Pages submitted and verified. Payout of <strong>₹4,500</strong> + <strong>₹500 Welcome Bonus</strong> successfully credited to UPI. Next brand batch ready!
+                    </p>
                     <div className="file-attachment-chip">
                       <FileText size={16} className="file-icon" />
-                      <span>Document_Final_Proofread.docx (Ready)</span>
+                      <span>Payout_Receipt_Amazon_LLM_₹4500.pdf (Credited)</span>
                     </div>
-                    <span className="bubble-time">04:30 PM • Sent ✓✓</span>
+                    <span className="bubble-time">Instant UPI Transfer Sent ✓✓</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Floating Mobile Smartphone Mockup (like reference) */}
+          {/* Floating Mobile Smartphone Mockup */}
           <div className="phone-mockup-frame">
             <div className="phone-notch">
               <span className="camera-lens" />
@@ -176,22 +198,22 @@ export default function Hero() {
 
             <div className="phone-screen">
               <div className="phone-header">
-                <span className="phone-logo">Service<span className="text-neon">Biz</span></span>
+                <span className="phone-logo">AI<span className="text-neon">Portal</span></span>
                 <span className="phone-online">Active</span>
               </div>
 
               <div className="phone-content">
-                <p className="phone-title">Fast Typewriting &amp; Data Entry</p>
+                <p className="phone-title">AI &amp; Typing Work: ₹400-₹500/pg</p>
                 <div className="phone-chat-card">
                   <div className="phone-bubble">
-                    <p>WhatsApp Quote Confirmed: 100% accuracy delivered on schedule.</p>
+                    <p>🎁 Account Opened! Website access granted. ₹500 Welcome Bonus added to wallet.</p>
                   </div>
                   <button
                     type="button"
                     className="phone-cta-btn"
-                    onClick={handlePrimaryQuote}
+                    onClick={handleClaimBonus}
                   >
-                    <span>Hire on WhatsApp</span>
+                    <span>Claim Welcome Bonus</span>
                     <ArrowUpRight size={14} />
                   </button>
                 </div>
@@ -199,10 +221,10 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Rotating Circular 100% Responsive / Guaranteed Badge (like reference) */}
-          <div className="circular-responsive-badge" aria-label="100% Accurate & Responsive">
+          {/* Rotating Circular 100% Responsive / Guaranteed Badge */}
+          <div className="circular-responsive-badge" aria-label="₹400-₹500 Per Page AI Typing">
             <div className="badge-inner-icon">
-              <Smartphone size={22} />
+              <Coins size={22} />
             </div>
             <svg viewBox="0 0 100 100" className="badge-rotating-text">
               <path
@@ -210,9 +232,9 @@ export default function Hero() {
                 d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
                 fill="none"
               />
-              <text fontSize="8.5" fill="#00E676" letterSpacing="2">
+              <text fontSize="8.2" fill="#00E676" letterSpacing="1.8">
                 <textPath href="#circlePath">
-                  • 100% ACCURATE • FAST DELIVERY •
+                  • ₹400-₹500 PER PAGE • AI LLM WORK •
                 </textPath>
               </text>
             </svg>

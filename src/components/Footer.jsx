@@ -1,7 +1,9 @@
 import React from 'react';
-import { Keyboard, MessageCircle, Clock, MapPin, CheckCircle2 } from 'lucide-react';
-import { openWhatsApp, DEFAULT_MESSAGES, WHATSAPP_NUMBER, FORMATTED_PHONE } from '../config/whatsapp';
+import { Keyboard, MessageCircle, Clock, Gift, CheckCircle2 } from 'lucide-react';
+import { openWhatsApp, DEFAULT_MESSAGES } from '../config/whatsapp';
 import './Footer.css';
+
+const CURRENT_YEAR = 2026;
 
 export default function Footer() {
   const handleNavClick = (e, targetId) => {
@@ -19,7 +21,7 @@ export default function Footer() {
   };
 
   const handleWhatsAppClick = () => {
-    openWhatsApp(DEFAULT_MESSAGES.finalCta);
+    openWhatsApp(DEFAULT_MESSAGES.welcomeBonus);
   };
 
   return (
@@ -33,41 +35,41 @@ export default function Footer() {
                 <Keyboard size={20} />
               </div>
               <span className="footer-logo-text">
-                <span className="footer-logo-service">Service</span>
-                <span className="footer-logo-biz">Biz</span>
+                <span className="footer-logo-service">AI</span>
+                <span className="footer-logo-biz">TypingHub</span>
               </span>
             </a>
             <p className="footer-brand-desc">
-              Professional freelance typewriting, copy typing, Excel spreadsheet data entry, and PDF document conversion services. Fast turnaround and 99%+ accuracy guaranteed.
+              AI-assisted typewriting and dataset preparation for Large Language Model (LLM) training. Earn ₹400 to ₹500 per page working on datasets for Amazon, Zomato, and global corporate brands.
             </p>
             <div className="footer-badge-item">
-              <CheckCircle2 size={16} />
-              <span>Dedicated Freelance Specialist</span>
+              <Gift size={16} />
+              <span>₹500 Instant Welcome Bonus on Day 1</span>
             </div>
           </div>
 
-          {/* Column 2: Services */}
+          {/* Column 2: Work Batches */}
           <div className="footer-col">
-            <h4 className="footer-col-title">Services</h4>
+            <h4 className="footer-col-title">Work Batches</h4>
             <ul className="footer-links">
               <li>
                 <a href="#services" onClick={(e) => handleNavClick(e, 'services')}>
-                  Professional Typewriting
+                  AI &amp; LLM Training Typing
                 </a>
               </li>
               <li>
                 <a href="#services" onClick={(e) => handleNavClick(e, 'services')}>
-                  Excel &amp; Data Entry
+                  Amazon &amp; Zomato Data Entry
                 </a>
               </li>
               <li>
                 <a href="#services" onClick={(e) => handleNavClick(e, 'services')}>
-                  PDF to Word / Excel
+                  Document AI &amp; OCR Formatting
                 </a>
               </li>
               <li>
                 <a href="#services" onClick={(e) => handleNavClick(e, 'services')}>
-                  Web Research &amp; Mining
+                  Prompt &amp; Response Annotation
                 </a>
               </li>
             </ul>
@@ -78,67 +80,67 @@ export default function Footer() {
             <h4 className="footer-col-title">Quick Links</h4>
             <ul className="footer-links">
               <li>
-                <a href="#calculator" onClick={(e) => handleNavClick(e, 'calculator')}>
-                  Earning Calculator
+                <a href="#corporate-partners" onClick={(e) => handleNavClick(e, 'corporate-partners')}>
+                  Corporate Brands
                 </a>
               </li>
               <li>
-                <a href="#why-us" onClick={(e) => handleNavClick(e, 'why-us')}>
-                  Why Hire Me
+                <a href="#calculator" onClick={(e) => handleNavClick(e, 'calculator')}>
+                  ₹400-₹500/Page Calculator
                 </a>
               </li>
               <li>
                 <a href="#how-it-works" onClick={(e) => handleNavClick(e, 'how-it-works')}>
-                  How It Works
+                  Account Opening &amp; Access
                 </a>
               </li>
               <li>
                 <a href="#testimonials" onClick={(e) => handleNavClick(e, 'testimonials')}>
-                  Client Reviews
+                  Worker Reviews (8 Verified)
                 </a>
               </li>
               <li>
                 <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>
-                  Get Free Quote
+                  Claim Welcome Bonus
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Contact & WhatsApp */}
-          <div className="footer-col footer-contact-col">
-            <h4 className="footer-col-title">Contact & Support</h4>
-            <div className="footer-contact-list">
-              <button
-                type="button"
-                className="footer-whatsapp-btn"
-                onClick={handleWhatsAppClick}
-                aria-label="Direct WhatsApp Chat"
-              >
-                <MessageCircle size={18} />
-                <span>Chat on WhatsApp ({FORMATTED_PHONE})</span>
-              </button>
-
-              <div className="footer-contact-item">
+          {/* Column 4: Contact & Support */}
+          <div className="footer-col">
+            <h4 className="footer-col-title">Worker Support</h4>
+            <div className="footer-contact-items">
+              <div className="contact-item">
                 <Clock size={16} className="contact-icon" />
-                <span>Mon – Sat: 8:00 AM – 10:00 PM (Rush tasks 24/7)</span>
+                <span>Immediate WhatsApp Account Activation</span>
               </div>
-
-              <div className="footer-contact-item">
-                <MapPin size={16} className="contact-icon" />
-                <span>Remote Freelance Services &amp; Fast Digital Delivery</span>
+              <div className="contact-item">
+                <CheckCircle2 size={16} className="contact-icon" />
+                <span>Daily &amp; Weekly Direct UPI Disbursements</span>
               </div>
             </div>
+            <button
+              type="button"
+              className="btn btn-neon footer-cta-btn"
+              onClick={handleWhatsAppClick}
+              aria-label="Claim ₹500 Welcome Bonus on WhatsApp"
+            >
+              <MessageCircle size={16} />
+              <span>Claim ₹500 Bonus</span>
+            </button>
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright */}
+        {/* Footer Bottom Bar */}
         <div className="footer-bottom">
-          <p className="footer-copyright">
-            &copy; {new Date().getFullYear()} Service Biz. All rights reserved.
+          <p className="copyright-text">
+            &copy; {CURRENT_YEAR} AI TypingHub • AI &amp; LLM Training Work Network. All rights reserved.
           </p>
           <div className="footer-bottom-links">
-            <span className="footer-note">Confidential &amp; High-Precision Freelance Services</span>
+            <a href="#hero" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+              Back to Top &uarr;
+            </a>
           </div>
         </div>
       </div>
